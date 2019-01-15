@@ -13,7 +13,7 @@ boxHeight=15;
 shaftDiameter=5.4;
 shaftHeight=22;
 
-topDiameter=10;
+topDiameter=13;
 topHeight=6;
 
 module gearPart() {
@@ -26,14 +26,14 @@ module gearPart() {
 module screwHole() {
     translate([3,0,18]) {
         rotate([0,90,0]) {
-            cylinder(d=2,h=2);
+            cylinder(d=2,h=3.5);
         }
     }
 }
 
 module rectangleHole() {
     translate([3,0,20]) {
-        cube([1,4,7],center=true);
+        cube([2,6,10],center=true);
     }
 }
 
