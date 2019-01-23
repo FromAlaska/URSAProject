@@ -27,8 +27,6 @@ module spoolHolder() {
     }
 }
 
-
-
 module middleShaft() {
     cylinder(d=bearingDiameter/1.08,h=beltHeight);
 }
@@ -49,8 +47,8 @@ module spool() {
             cube([beltHeight,beltHeight,beltHeight], center=true); 
             resize([diameterForBelt,diameterForBelt,beltHeight*2])
             sphere(r=10);
-            }
-      }
+        }
+    }
 }
 
 module oval(w,h, height, center = false) {
