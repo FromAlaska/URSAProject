@@ -8,11 +8,11 @@ $fs=0.01;
 footToMillimeters=304.8;
 
 // For line Length
-lineLength=footToMillimeters/4;
+lineLength=footToMillimeters/3.357;
 linePlacement = footToMillimeters/8;
 
 // For Circles
-radius = 37.6;
+radius = 30.3;
 angles = [-90, 90];
 offsetOfHalfCircles=radius*2;
 
@@ -69,7 +69,7 @@ module lineA() {
 }
 
 module lineB() {
-    translate([linePlacement, lineLength*2, 0]) {
+    translate([linePlacement, lineLength*2-29.1953599, 0]) {
         lineX();
     }
 }
