@@ -4,17 +4,23 @@
 
 $fn=100;
 
+washerHeight=1.7;
+boltHeight=6.66;
+wallHeight=5.9;
+
+offsetHeight=wallHeight;
+
 gearPart();
 
-boxLength=14.8;
-boxWidth=14.8;
-boxHeight=30-12.7;
+boxLength=14.1;
+boxWidth=14.1;
+boxHeight=10.4;
 
 shaftDiameter=5.4;
 shaftHeight=22;
 
 topDiameter=13;
-topHeight=12.7;
+topHeight=offsetHeight;
 
 module gearPart() {
     union() {
@@ -28,7 +34,7 @@ module screwHole() {
         rotate([0,90,0]) {
             rotate([0,0,30]) {
                 hull() {
-                    cylinder(d=6.3,h=2.3);
+                    cylinder(d=6.8,h=2.3);
                     $fn=6;
                 }
             }
@@ -38,14 +44,14 @@ module screwHole() {
 
 module rectangleHole() {
     translate([1.7,0,boxHeight+topHeight/2]) {
-        cube([2.3,6.3,20],center=true);
+        cube([2.3,6.6,20],center=true);
     }
 }
 
 module topPart() {
     difference() {
         translate([0,0,boxHeight]) {
-            cylinder(d=topDiameter, h=topHeight);
+            cylinder(d=topDiameter, h=offsetHeight+1);
         }
         shaft();
         screwHole();
@@ -74,6 +80,6 @@ module box() {
 
 module shaft() {
     translate([0,0,boxHeight+topHeight-shaftHeight]) {
-        cylinder(d=shaftDiameter,h=shaftHeight+1);
+        cylinder(d=shaftDiameter,h=shaftHeight+2);
     }
 }
