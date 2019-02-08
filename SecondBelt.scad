@@ -16,7 +16,7 @@ radius = 30.3;
 angles = [-90, 90];
 offsetOfHalfCircles=radius*2;
 
-beltHeight=60; // millimeters
+beltHeight=80; // millimeters
 beltWidth=1;
 beltLength=1*footToMillimeters-offsetOfHalfCircles;
 

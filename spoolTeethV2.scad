@@ -2,9 +2,9 @@
 // Spool with teeth for rat project 
 // November 14, 2018
 
-offsetForEnds=6;
 
-beltHeight=60+(offsetForEnds); // millimeters
+
+beltHeight=80; // millimeters
 diameterForBelt=30;
 
 diameterForEdgesHeight=2;
@@ -14,6 +14,9 @@ bearingDiameter=22.2;
 bearingHeight=8;
 
 spoolHolder();
+
+//translate([20,0,0]) cube([10,10,80]);
+
 
 module spoolHolder() {
     union() {
@@ -37,8 +40,8 @@ module gear() {
    //translate([-11,-11.1,-1]) {
         //import("SGearSpurV1_fixed.stl", convexity=10); 
     //}
-    translate([0,0,0]) {
-        cube([15.3,15.3,30],center=true);
+    translate([0,0,14-12.7]) {
+        cube([15.3,15.3,31-12.7],center=true);
     }
 }
 
@@ -53,8 +56,8 @@ module middleShaft() {
 }
 
 module bearings() {
-    translate([0,0,beltHeight-bearingHeight+1]) {
-        cylinder(d=bearingDiameter,h=bearingHeight);
+    translate([0,0,beltHeight-bearingHeight+1-12.7]) {
+        #cylinder(d=bearingDiameter,h=bearingHeight+12);
     }
 }
 
