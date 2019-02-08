@@ -6,8 +6,8 @@ $fn=100;
 
 gearPart();
 
-boxLength=15;
-boxWidth=15;
+boxLength=14.8;
+boxWidth=14.8;
 boxHeight=30-12.7;
 
 shaftDiameter=5.4;
@@ -24,16 +24,21 @@ module gearPart() {
 }
 
 module screwHole() {
-    translate([3,0,boxHeight+topHeight/2]) {
+    translate([0.5+2.3,0,boxHeight+topHeight/2]) {
         rotate([0,90,0]) {
-            cylinder(d=2,h=3.5);
+            rotate([0,0,30]) {
+                hull() {
+                    cylinder(d=6.3,h=2.3);
+                    $fn=6;
+                }
+            }
         }
     }
 }
 
 module rectangleHole() {
-    translate([3,0,boxHeight+topHeight/2]) {
-        cube([2,6,10],center=true);
+    translate([1.7,0,boxHeight+topHeight/2]) {
+        cube([2.3,6.3,20],center=true);
     }
 }
 
@@ -43,8 +48,14 @@ module topPart() {
             cylinder(d=topDiameter, h=topHeight);
         }
         shaft();
-        #screwHole();
+        screwHole();
         rectangleHole();
+        //Diameter of the screw
+        translate([0.5+2.3,0,boxHeight+topHeight/2]) {
+            rotate([0,90,0]) {
+                #cylinder(d=2.5,h=5);
+            }
+        }
     }
 }
 
