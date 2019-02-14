@@ -6,7 +6,7 @@ $fs=0.1;
 
 offsetForEnds=6;
 
-beltHeight=60+(offsetForEnds); // millimeters
+beltHeight=80; // millimeters
 diameterForBelt=30;
 
 diameterForEdgesHeight=2;
@@ -21,7 +21,7 @@ module spoolHolder() {
     union() {
         difference() {
             spool();
-            #bearings();
+            bearings();
             middleShaft();
         }
     }
@@ -33,11 +33,11 @@ module middleShaft() {
 
 module bearings() {
     translate([0,0,-1]) {
-        cylinder(d=bearingDiameter,h=bearingHeight);
+        #cylinder(d=bearingDiameter,h=bearingHeight+12);
     }
     
-    translate([0,0,beltHeight-bearingHeight+1]) {
-        cylinder(d=bearingDiameter,h=bearingHeight);
+    translate([0,0,beltHeight-bearingHeight+1-12.7]) {
+        #cylinder(d=bearingDiameter,h=bearingHeight+12);
     }
 }
 

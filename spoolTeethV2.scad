@@ -2,7 +2,11 @@
 // Spool with teeth for rat project 
 // November 14, 2018
 
+washerHeight=1.7;
+boltHeight=6.66;
+wallHeight=5.9;
 
+offsetHeight=washerHeight+boltHeight+wallHeight;
 
 beltHeight=80; // millimeters
 diameterForBelt=30;
@@ -40,8 +44,8 @@ module gear() {
    //translate([-11,-11.1,-1]) {
         //import("SGearSpurV1_fixed.stl", convexity=10); 
     //}
-    translate([0,0,14-12.7]) {
-        cube([15.3,15.3,31-12.7],center=true);
+    translate([0,0,offsetHeight]) {
+        cube([15.3,15.3,31],center=true);
     }
 }
 
@@ -50,14 +54,14 @@ module teethHolder() {
 }
 
 module middleShaft() {
-    translate([0,0,16]) {
+    translate([0,0,46]) {
         cylinder(d=bearingDiameter/1.08,h=beltHeight);
     }
 }
 
 module bearings() {
     translate([0,0,beltHeight-bearingHeight+1-12.7]) {
-        #cylinder(d=bearingDiameter,h=bearingHeight+12);
+        cylinder(d=bearingDiameter,h=bearingHeight+12);
     }
 }
 
