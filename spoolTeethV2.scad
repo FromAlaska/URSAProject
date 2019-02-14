@@ -17,9 +17,14 @@ diameterForEdges = diameterForBelt + 4;
 bearingDiameter=22.2;
 bearingHeight=8;
 
+totalHeight=92; // Total Height of belt
+offsetHeightOfBelt=(totalHeight-beltHeight)/2; // Stuff
+
 spoolHolder();
 
 //translate([20,0,0]) cube([10,10,80]);
+
+translate([0,20,(totalHeight/2)-offsetHeightOfBelt]) cube([10,10,totalHeight],center=true);
 
 
 module spoolHolder() {
