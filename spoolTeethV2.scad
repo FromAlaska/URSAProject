@@ -36,6 +36,9 @@ module spoolHolder() {
             gear();
             tube();
         }
+        translate([0,0,-offsetHeight]) {
+        cylinder(r=15.3/2,h=offsetHeight);
+        }
     }
 }
 
@@ -49,8 +52,9 @@ module gear() {
    //translate([-11,-11.1,-1]) {
         //import("SGearSpurV1_fixed.stl", convexity=10); 
     //}
-    translate([0,0,offsetHeight]) {
-        cube([15.3,15.3,31],center=true);
+    cubeHeight=20;
+    translate([0,0,cubeHeight/2]) {
+        #cube([15.3,15.3,cubeHeight+1],center=true);
     }
 }
 
