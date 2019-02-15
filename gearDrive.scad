@@ -6,7 +6,7 @@ $fn=100;
 
 washerHeight=1.7;
 boltHeight=6.66;
-wallHeight=5.9;
+wallHeight=5;
 
 offsetHeight=wallHeight;
 

@@ -24,7 +24,7 @@ spoolHolder();
 
 //translate([20,0,0]) cube([10,10,80]);
 
-translate([0,20,(totalHeight/2)-offsetHeightOfBelt]) cube([10,10,totalHeight],center=true);
+//translate([0,20,(totalHeight/2)-offsetHeightOfBelt]) cube([10,10,totalHeight],center=true);
 
 
 module spoolHolder() {
@@ -36,9 +36,7 @@ module spoolHolder() {
             gear();
             tube();
         }
-        translate([0,0,-offsetHeight]) {
-        cylinder(r=15.3/2,h=offsetHeight);
-        }
+        //translate([0,0,-offsetHeight]) {cylinder(r=15.3/2,h=offsetHeight); }
     }
 }
 
