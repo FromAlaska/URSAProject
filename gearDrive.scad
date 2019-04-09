@@ -12,8 +12,8 @@ offsetHeight=wallHeight;
 
 gearPart();
 
-boxLength=15;
-boxWidth=15;
+boxLength=15.3;
+boxWidth=15.3;
 boxHeight=20;
 
 shaftDiameter=5.4;
